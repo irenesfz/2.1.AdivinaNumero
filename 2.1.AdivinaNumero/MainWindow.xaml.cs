@@ -20,20 +20,43 @@ namespace _2._1.AdivinaNumero
     /// </summary>
     public partial class MainWindow : Window
     {
+        Random rn = new Random();
+        int numeroAleatorio;
+
 
         public MainWindow()
         {
             InitializeComponent();
+            numeroAleatorio = rn.Next(0, 101);
         }
 
         private void ButtonComprobar_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (numeroAleatorio.ToString() == numeroTextBox.Text)
+                {
+                    ResultadoTextBlock.Text = "Enhorabuena, lo has acertado";
+                }
+                else
+                {
+                    if (numeroAleatorio < int.Parse(numeroTextBox.Text))
+                        ResultadoTextBlock.Text = "Te has pasado";
+
+                    else
+                    {
+                        ResultadoTextBlock.Text = "Te has quedado corto";
+                    }
+                }
+            }
+            catch (FormatException m) { Console.WriteLine("\n\n" + m.Message + "\n\n"); }
 
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonReiniciar_Click(object sender, RoutedEventArgs e)
         {
-
+            numeroAleatorio = rn.Next(0, 101);
+            ResultadoTextBlock.Text = "";
+            numeroTextBox.Text = "";
         }
     }
 }
