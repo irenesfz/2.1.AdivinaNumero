@@ -32,25 +32,15 @@ namespace _2._1.AdivinaNumero
 
         private void ButtonComprobar_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (numeroAleatorio.ToString() == numeroTextBox.Text)
+                ResultadoTextBlock.Text = "¡Has acertado!";
+            else
             {
-                if (numeroAleatorio.ToString() == numeroTextBox.Text)
-                {
-                    ResultadoTextBlock.Text = "Enhorabuena, lo has acertado";
-                }
+                if (numeroAleatorio < int.Parse(numeroTextBox.Text))
+                    ResultadoTextBlock.Text = "Te has pasado";
                 else
-                {
-                    if (numeroAleatorio < int.Parse(numeroTextBox.Text))
-                        ResultadoTextBlock.Text = "Te has pasado";
-
-                    else
-                    {
-                        ResultadoTextBlock.Text = "Te has quedado corto";
-                    }
-                }
+                    ResultadoTextBlock.Text = "Te has quedado corto";
             }
-            catch (FormatException m) { Console.WriteLine("\n\n" + m.Message + "\n\n"); }
-
         }
         private void ButtonReiniciar_Click(object sender, RoutedEventArgs e)
         {
