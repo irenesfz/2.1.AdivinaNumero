@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace _2._1.AdivinaNumero
 {
@@ -20,12 +9,11 @@ namespace _2._1.AdivinaNumero
     /// </summary>
     public partial class MainWindow : Window
     {
-        
         int numeroAleatorio;
+        Random rn = new Random();
 
         public int CreaNumeroRandom()
         {
-            Random rn = new Random();
             return rn.Next(0, 101);
         }
         public MainWindow()
@@ -36,11 +24,11 @@ namespace _2._1.AdivinaNumero
 
         private void ButtonComprobar_Click(object sender, RoutedEventArgs e)
         {
-            if (numeroAleatorio.ToString() == numeroTextBox.Text)
+            if (numeroAleatorio.ToString() == NumeroTextBox.Text)
                 ResultadoTextBlock.Text = "¡Has acertado!";
             else
             {
-                if (numeroAleatorio < int.Parse(numeroTextBox.Text))
+                if (numeroAleatorio < int.Parse(NumeroTextBox.Text))
                     ResultadoTextBlock.Text = "Te has pasado";
                 else
                     ResultadoTextBlock.Text = "Te has quedado corto";
@@ -49,8 +37,8 @@ namespace _2._1.AdivinaNumero
         private void ButtonReiniciar_Click(object sender, RoutedEventArgs e)
         {
             numeroAleatorio = CreaNumeroRandom();
-            ResultadoTextBlock.Text = "";
-            numeroTextBox.Text = "";
+            ResultadoTextBlock.Text = String.Empty;
+            NumeroTextBox.Clear();
         }
     }
 }

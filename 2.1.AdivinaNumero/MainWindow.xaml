@@ -9,8 +9,8 @@
         Title="2.1.AdivinaNumero" Height="190" Width="500">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="27,34,0,0" TextWrapping="Wrap" Text="¿Qué número he pensado?" VerticalAlignment="Top"/>
-        <TextBox x:Name="numeroTextBox" HorizontalAlignment="Left" Height="23" Margin="192,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148"/>
-        <Button x:Name="ComprobarButton" Content="Comprobar" HorizontalAlignment="Left" Margin="43,91,0,0" VerticalAlignment="Top" Width="130" Click="ButtonComprobar_Click" Height="28"/>
+        <TextBox x:Name="NumeroTextBox" HorizontalAlignment="Left" Height="23" Margin="192,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148"/>
+        <Button x:Name="ComprobarButton" Content="Comprobar" IsDefault="True" HorizontalAlignment="Left" Margin="43,91,0,0" VerticalAlignment="Top" Width="130" Click="ButtonComprobar_Click" Height="28"/>
         <Button x:Name="ReiniciarButton" Content="Reiniciar" HorizontalAlignment="Left" Margin="192,91,0,0" VerticalAlignment="Top" Width="130" Click="ButtonReiniciar_Click" Height="28"/>
         <TextBlock x:Name ="ResultadoTextBlock" HorizontalAlignment="Left" Margin="358,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="124"/>
 
